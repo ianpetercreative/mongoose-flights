@@ -1,0 +1,119 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+.btn {
+  /* these are anchor tags made to look like buttons */
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+#list {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.header {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  text-align: left;
+}
+
+.flight-row:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.flight-cell {
+  padding: 10px;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}
+
+#main-nav {
+  background-color: #333;
+  padding: 10px;
+  text-align: center;
+}
+
+#main-nav a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 10px; /* Add spacing between links */
+}
+
+#main-nav a:hover {
+  text-decoration: underline;
+}
+
+h2 {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.new-flight-form, .new-ticket-form {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+select, input, button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.form-button {
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.form-button:hover {
+  background-color: #0056b3;
+}
+
+
+
+#show-page {
+  width: 70%;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.show-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.show-table-header {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  text-align: left;
+}
+
+.show-info-cell {
+  padding: 10px;
+}

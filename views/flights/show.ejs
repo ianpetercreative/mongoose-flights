@@ -1,0 +1,99 @@
+<%- include('../partials/header') %>
+
+<section id="show-page">
+    <table class="show-table">
+        <thead>
+            <tr>
+                <th class="show-table-header">Airline:</th>
+                <th class="show-table-header">Airport:</th>
+                <th class="show-table-header">Flight Number:</th>
+                <th class="show-table-header">Departure:</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td class="show-info-cell"><%= flight.airline %></td>
+                <td class="show-info-cell"><%= flight.airport %></td>
+                <td class="show-info-cell"><%= flight.flightNo %></td>
+                <td class="show-info-cell"><%= flight.departs.toLocaleDateString() %>  |  <%= flight.departs.toLocaleTimeString() %></td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+<h3>Destinations:</h3>
+
+<table id="list">
+    <thead>
+        <tr class="flight-row">
+            <th class="header">Airport</th>
+            <th class="header">Arrival</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <% flight.destinations.forEach((d) => { %>
+            <tr class="flight-row">
+                <td class="flight-cell"><%= d.airport %></td>
+                <td class="flight-cell"><%= d.arrival.toLocaleDateString() %>  |  <%= d.arrival.toLocaleTimeString() %></td>
+            </tr>
+        <% })  %>
+    </tbody>
+</table>
+
+<br />
+<br />
+<br />
+
+<h3>Add Destinations:</h3>
+<form action="/flights/<%= flight._id %>/destinations" method="POST">
+    <label>Destination Airport:
+        <select name="airport">
+            <option value="AUS">AUS</option>
+            <option value="DFW">DFW</option>
+            <option value="DEN" selected>DEN</option>
+            <option value="LAX">LAX</option>
+            <option value="SAN">SAN</option>
+        </select>
+    </label>
+    
+    <label>Arrival:
+        <input type="datetime-local" name="arrival">
+    </label>
+    
+    <button class="form-button" type="submit">Submit</button>
+</form>
+
+<br />
+<br />
+<br />
+
+<h3>Tickets:</h3>
+
+<table id="list">
+    <thead>
+        <tr class="flight-row">
+            <th class="header">Seat</th>
+            <th class="header">Price</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <% tickets.forEach((t) => { %>
+            <tr class="flight-row">
+                <td class="flight-cell"><%= t.seat %></td>
+                <td class="flight-cell"><%= t.price %></td>
+            </tr>
+            <% })  %>
+        <% if (tickets.length === 0) { %>
+            <tr>
+                <td>No Tickets Created</td>
+            </tr>        
+        <% } %>
+    </tbody>
+</table>
+
+<a class="btn" href="/flights/<%= flight._id %>/tickets/new">Create New Ticket</a>
+
+<%- include('../partials/footer') %>
